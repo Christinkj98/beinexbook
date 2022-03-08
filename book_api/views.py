@@ -56,7 +56,7 @@ def editbook(request,id):
             if request.method == 'POST':
                 date = dateformat.format(timezone.now(),'YmdHis')
                 var = beinexbooks.objects.get(id=id)
-                if int(date)-int(var.Timestamp) > 100:
+                if int(date)-int(var.Timestamp) > 10:
                     var.Bookname = request.POST['name']
                     var.Author = request.POST['author']
                     var.Description = request.POST['description']
