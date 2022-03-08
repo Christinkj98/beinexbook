@@ -1,0 +1,61 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block content %}
+<style>
+input[type=text],
+input[type=text]:focus{
+    color: white;
+}
+
+</style>
+<h3>Edit</h3>
+<form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+    {% csrf_token %}
+    <div class="row mt-4 r_1">
+        <div class="col-lg-7 col-12 offset-lg-1">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Edit Book</h4>
+                    <div class="row">
+                        <div class=" col-12 col-md-12 col-lg-12">
+                            <label>Book Name</label>
+                            <br>
+                            <input type="text" name="name" class="form-control" placeholder="Book Name" value="{{mem1.Bookname}}">
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <div class=" col-12 col-md-12 col-lg-12">
+                            <label>Author</label>
+                            <br>
+                            <input type="text" name="author" class="form-control" placeholder="Author" value="{{mem1.Author}}">
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <div class=" col-12 col-md-12 col-lg-12">
+                            <label>Description</label>
+                            <br>
+                            <textarea type="text" name="description" class="form-control text-light"
+                                placeholder="Description">{{mem1.Description}}</textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <div class=" offset-10 col-2 col-md-2 col-lg-2">
+                            <button style="border: none;background-color: transparent;" type="submit">
+                                <div class="badge badge-outline-primary">Submit</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
